@@ -373,6 +373,10 @@ const preparePage = async () => {
 
     geforcenow: sjPreset('https://play.geforcenow.com/mall'),
 
+    nowgg: sjPreset('https://now.gg'),
+
+    xboxcloud: sjPreset('https://www.xbox.com/play'),
+
     spotify: sjPreset('https://open.spotify.com'),
 
     tiktok: sjPreset('https://www.tiktok.com'),
@@ -550,6 +554,8 @@ const preparePage = async () => {
   prSet('pr-fm', 'fmhy');
   prSet('pr-dc', 'discord');
   prSet('pr-gf', 'geforcenow');
+  prSet('pr-ng', 'nowgg');
+  prSet('pr-xc', 'xboxcloud');
   prSet('pr-sp', 'spotify');
   prSet('pr-tt', 'tiktok');
   prSet('pr-ha', 'animetsu');

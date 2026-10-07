@@ -371,6 +371,21 @@ if (document.getElementById('csel')) {
     }
   });
 
+  attachClassEventListener('cloudgaming', 'change', (e) => {
+    const enabled = checkBooleanState(e.target) === true;
+    if (enabled) {
+      setStorage('CloudGaming', true);
+      pageShowAds();
+      setStorage('HideAds', false);
+      classUpdateHandler(document.getElementsByClassName('hideads'), 'off')();
+    } else {
+      removeStorage('CloudGaming');
+      setStorage('HideAds', true);
+      classUpdateHandler(document.getElementsByClassName('hideads'), 'on')();
+    }
+    if (e.isTrusted) location.reload();
+  });
+
   attachClassEventListener('useonion', 'change', (e) => {
     const regionList = document.getElementsByClassName('region-list');
     if (checkBooleanState(e.target) === true) {
@@ -495,6 +510,15 @@ useStorageArgs('HideAds', (s) => {
   else {
     pageShowAds();
     classUpdateHandler(document.getElementsByClassName('hideads'), 'off')();
+  }
+});
+
+useStorageArgs('CloudGaming', (s) => {
+  if (s) {
+    pageShowAds();
+    classUpdateHandler(document.getElementsByClassName('cloudgaming'), 'on')();
+  } else {
+    classUpdateHandler(document.getElementsByClassName('cloudgaming'), 'off')();
   }
 });
 

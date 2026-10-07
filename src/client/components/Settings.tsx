@@ -55,6 +55,18 @@ export default function Settings() {
 						</label>
 						<label>
 							<p>
+								{'\n            Cloud Gaming Mode\n            '}
+								<span class={'default-badge'}>
+									now.gg / Xbox Cloud
+								</span>
+							</p>
+							<input
+								type={'checkbox'}
+								class={'switch cloudgaming'}
+							/>
+						</label>
+						<label>
+							<p>
 								{'\n            '}
 								Enable Tor/Rotate IP
 								{'\n            '}

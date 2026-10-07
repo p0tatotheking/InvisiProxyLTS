@@ -78,6 +78,20 @@ export default function Applications() {
 								</button>
 								<button
 									type="button"
+									id={'pr-ng'}
+									class="fancybutton glowbutton pr-go2 link-button"
+								>
+									now.gg
+								</button>
+								<button
+									type="button"
+									id={'pr-xc'}
+									class="fancybutton glowbutton pr-go2 link-button"
+								>
+									Xbox Cloud Gaming
+								</button>
+								<button
+									type="button"
 									id={'pr-sp'}
 									class="fancybutton glowbutton pr-go2 link-button"
 								>

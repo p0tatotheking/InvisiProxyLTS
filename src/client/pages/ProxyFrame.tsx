@@ -65,7 +65,9 @@ export default function ProxyFrame() {
 			<iframe
 				title="Proxied page"
 				id={'frame'}
-				allow={'fullscreen'}
+				allow={
+					'autoplay; clipboard-write; encrypted-media; fullscreen; gamepad; microphone; midi; picture-in-picture; xr-spatial-tracking'
+				}
 				autofocus={true}
 			></iframe>
 			<Cooking />
@@ -115,11 +117,12 @@ export default function ProxyFrame() {
       };
 
       const applySandbox = () => {
-        const sandboxEnabled =
-          localStorage.getItem('${values.storageNamespace}-storage') &&
-          JSON.parse(localStorage.getItem('${values.storageNamespace}-storage')).Sandbox;
+        const storage = JSON.parse(
+          localStorage.getItem('${values.storageNamespace}-storage') || '{}'
+        );
+        const sandboxEnabled = !!storage.Sandbox || !!storage.CloudGaming;
         const sandboxPermissions =
-          'allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-presentation allow-same-origin allow-scripts allow-downloads';
+          'allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-downloads';
 
         if (sandboxEnabled) {
           windowFrame.setAttribute('sandbox', sandboxPermissions);

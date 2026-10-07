@@ -7,6 +7,6 @@
 	"disguiseFiles": true,
 	"usingSEO": false,
 	"verbose": true,
-	"port": 8080,
+	"port": 3000,
 	"showSplash": false
 }

@@ -22,7 +22,11 @@ import { values, route } from 'build:invisiproxy';
   };
 
   const getSWRoute = () =>
-    route(readStorage('HideAds') !== false ? '/sw-blacklist.js' : '/sw.js');
+    route(
+      readStorage('HideAds') !== false && readStorage('CloudGaming') !== true
+        ? '/sw-blacklist.js'
+        : '/sw.js'
+    );
 
   const unregisterStaleSWs = async () => {
     const expected = new URL(getSWRoute(), location.origin).pathname;
